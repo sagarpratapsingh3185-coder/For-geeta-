@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Apology 💗</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd1e6,#ffeef7);
+font-family:cursive;
+overflow:hidden;
+}
+
+.container{
+text-align:center;
+}
+
+.title{
+font-size:26px;
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.envelope{
+position:relative;
+width:260px;
+height:160px;
+background:#ff8fb1;
+border-radius:10px;
+cursor:pointer;
+margin:auto;
+}
+
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-top:80px solid #ff6fa1;
+transform-origin:top;
+transition:0.6s;
+}
+
+.letter{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+width:85%;
+background:white;
+padding:15px;
+border-radius:12px;
+top:40px;
+transition:0.6s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+font-size:14px;
+}
+
+.open .flap{
+transform:rotateX(180deg);
+}
+
+.open .letter{
+top:-140px;
+}
+
+.heart,.tulip{
+position:fixed;
+animation:float 4s linear forwards;
+}
+
+@keyframes float{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-600px);
+opacity:0;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">For Geeta 💞</div>
+
+<div class="envelope" onclick="openEnvelope()" id="env">
+
+<div class="flap"></div>
+
+<div class="letter">
+
+Sonaaaa 👉🏻👈🏻 <br><br>
+
+Suno na I’m so sorryyy  
+Shyd me apni baat samjha ni paya  
+or bas aapke ek chote se word se trigger ho gya 👉🏻👈🏻🥲 <br><br>
+
+Shyd mujhe itta gussa ni krna chaiye tha  
+sorryyy 🤌🏻🫠🌷 <br><br>
+
+I love u so muchhh 🫶🏻💕😭 <br><br>
+
+And good morning 🌷💕🤌🏻
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let animationPlayed = false;
+
+function openEnvelope(){
+
+document.getElementById("env").classList.toggle("open");
+
+if(animationPlayed) return;
+animationPlayed = true;
+
+for(let i=0;i<20;i++){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💗";
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="0px";
+heart.style.fontSize="22px";
+document.body.appendChild(heart);
+
+let tulip=document.createElement("div");
+tulip.className="tulip";
+tulip.innerHTML="🌷";
+tulip.style.left=Math.random()*100+"vw";
+tulip.style.bottom="0px";
+tulip.style.fontSize="22px";
+document.body.appendChild(tulip);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
